@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rentas",
+  "info": {
+    "singularName": "renta",
+    "pluralName": "rentas",
+    "displayName": "renta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "articulos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::articulo.articulo",
+      "mappedBy": "renta"
+    },
+    "Orden": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::articulo.articulo",
+      "inversedBy": "rentas"
+    },
+    "fechaEntrega": {
+      "type": "datetime"
+    },
+    "fechaDevolucion": {
+      "type": "datetime"
+    },
+    "estadoEquipoEntrega": {
+      "type": "enumeration",
+      "enum": [
+        "Nuevo",
+        "Bueno",
+        "Regular",
+        "Dañado"
+      ]
+    },
+    "estadoEquipoDevolucion": {
+      "type": "enumeration",
+      "enum": [
+        "Nuevo",
+        "Bueno",
+        "Regular",
+        "Dañado"
+      ]
+    },
+    "observacionesEntrega": {
+      "type": "string",
+      "required": true
+    },
+    "observacionesDevolucion": {
+      "type": "string"
+    },
+    "cargosDanos": {
+      "type": "decimal"
+    },
+    "fotoEntrega": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "fotoDevolucion": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  }
+}

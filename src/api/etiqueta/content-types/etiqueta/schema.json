@@ -23,6 +23,12 @@
         }
       },
       "required": true
+    },
+    "articulos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::articulo.articulo",
+      "mappedBy": "etiquetas"
     }
   }
 }

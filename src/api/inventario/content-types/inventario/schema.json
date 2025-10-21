@@ -15,6 +15,15 @@
     }
   },
   "attributes": {
+    "NoSerie": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
     "identificador": {
       "type": "uid",
       "pluginOptions": {
@@ -24,7 +33,7 @@
       },
       "required": true
     },
-    "estado": {
+    "estadoActual": {
       "type": "enumeration",
       "pluginOptions": {
         "i18n": {
@@ -40,16 +49,6 @@
         "No disponible"
       ]
     },
-    "detalles": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true,
-      "regex": "notas sobre la condición específica del equipo"
-    },
     "articulo": {
       "type": "relation",
       "relation": "manyToOne",
@@ -61,6 +60,33 @@
       "relation": "oneToOne",
       "target": "api::orden.orden",
       "inversedBy": "inventario"
+    },
+    "observaciones": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "ultimoMantenimiento": {
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": false
+    },
+    "fechaAdquisicion": {
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
     }
   }
 }

@@ -45,6 +45,15 @@
       "required": true,
       "regex": "Rojas"
     },
+    "correo": {
+      "type": "email",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
     "telefono": {
       "type": "integer",
       "pluginOptions": {
@@ -54,11 +63,53 @@
       },
       "required": true
     },
+    "ciudad": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "colonia": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
     "ordens": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::orden.orden",
       "mappedBy": "cliente"
+    },
+    "identificacionOficial": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "notas": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": false,
+      "regex": "Ej. \"Cliente recurrente\", \"Requiere factura siempre\""
     }
   }
 }

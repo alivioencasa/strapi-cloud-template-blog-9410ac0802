@@ -81,6 +81,51 @@
         }
       },
       "required": true
+    },
+    "etiquetas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::etiqueta.etiqueta",
+      "inversedBy": "articulos"
+    },
+    "descripcion": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "dimensiones": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "peso": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "renta": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::renta.renta",
+      "inversedBy": "articulos"
+    },
+    "rentas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::renta.renta",
+      "mappedBy": "Orden"
     }
   }
 }
