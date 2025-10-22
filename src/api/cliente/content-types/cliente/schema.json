@@ -54,15 +54,6 @@
       },
       "required": true
     },
-    "telefono": {
-      "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
-    },
     "ciudad": {
       "type": "string",
       "pluginOptions": {
@@ -138,6 +129,14 @@
       }
     },
     "telefonoEmergencia": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "telefono": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

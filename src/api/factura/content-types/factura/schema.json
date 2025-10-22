@@ -148,6 +148,14 @@
       "allowedTypes": [
         "files"
       ]
+    },
+    "uuid": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

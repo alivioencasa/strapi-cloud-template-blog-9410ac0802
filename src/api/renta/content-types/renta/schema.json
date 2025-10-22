@@ -4,7 +4,7 @@
   "info": {
     "singularName": "renta",
     "pluralName": "rentas",
-    "displayName": "renta"
+    "displayName": "Renta"
   },
   "options": {
     "draftAndPublish": true
@@ -62,6 +62,18 @@
         "files",
         "videos"
       ]
+    },
+    "orden": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::orden.orden",
+      "inversedBy": "rentas"
+    },
+    "inventario": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::inventario.inventario",
+      "inversedBy": "rentas"
     }
   }
 }

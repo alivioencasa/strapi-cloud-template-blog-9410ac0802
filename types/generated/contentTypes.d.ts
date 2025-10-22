@@ -628,11 +628,10 @@ export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    telefono: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
+    telefono: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     telefonoEmergencia: Schema.Attribute.String &
@@ -804,6 +803,12 @@ export interface ApiFacturaFactura extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    uuid: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
@@ -903,6 +908,7 @@ export interface ApiInventarioInventario extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    rentas: Schema.Attribute.Relation<'oneToMany', 'api::renta.renta'>;
     ultimoMantenimiento: Schema.Attribute.Date &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1080,6 +1086,7 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    rentas: Schema.Attribute.Relation<'oneToMany', 'api::renta.renta'>;
     subtotal: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -1111,7 +1118,7 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
 export interface ApiRentaRenta extends Struct.CollectionTypeSchema {
   collectionName: 'rentas';
   info: {
-    displayName: 'renta';
+    displayName: 'Renta';
     pluralName: 'rentas';
     singularName: 'renta';
   };
@@ -1133,11 +1140,16 @@ export interface ApiRentaRenta extends Struct.CollectionTypeSchema {
     fechaEntrega: Schema.Attribute.DateTime;
     fotoDevolucion: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
     fotoEntrega: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
+    inventario: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::inventario.inventario'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::renta.renta'> &
       Schema.Attribute.Private;
     observacionesDevolucion: Schema.Attribute.String;
     observacionesEntrega: Schema.Attribute.String & Schema.Attribute.Required;
+    orden: Schema.Attribute.Relation<'manyToOne', 'api::orden.orden'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

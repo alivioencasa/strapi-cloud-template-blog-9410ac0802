@@ -82,6 +82,12 @@
         }
       },
       "required": true
+    },
+    "rentas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::renta.renta",
+      "mappedBy": "inventario"
     }
   }
 }
