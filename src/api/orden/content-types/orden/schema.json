@@ -42,7 +42,7 @@
       },
       "required": true
     },
-    "fechaDevolucionRea": {
+    "fechaDevolucionReal": {
       "type": "datetime",
       "pluginOptions": {
         "i18n": {
@@ -60,9 +60,9 @@
       },
       "required": true,
       "enum": [
-        "endiente",
+        "Pendiente",
         "Confirmada",
-        "En entrega",
+        "EnEntrega",
         "Activa",
         "Finalizada",
         "Cancelada"
@@ -228,6 +228,23 @@
       "relation": "manyToOne",
       "target": "api::cliente.cliente",
       "inversedBy": "ordens"
+    },
+    "descuentos": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": 0
+    },
+    "notasInternas": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

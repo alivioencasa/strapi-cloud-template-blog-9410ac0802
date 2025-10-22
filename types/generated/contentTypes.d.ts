@@ -441,6 +441,13 @@ export interface ApiArticuloArticulo extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    disponibilidad: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
     etiquetas: Schema.Attribute.Relation<
       'manyToMany',
       'api::etiqueta.etiqueta'
@@ -502,6 +509,20 @@ export interface ApiArticuloArticulo extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     renta: Schema.Attribute.Relation<'manyToOne', 'api::renta.renta'>;
     rentas: Schema.Attribute.Relation<'oneToMany', 'api::renta.renta'>;
+    requiereCapacitacion: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
+    requiereInstalacion: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -545,6 +566,13 @@ export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    codigoPOstal: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     colonia: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -562,6 +590,13 @@ export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    direccion: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     identificacionOficial: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -589,11 +624,23 @@ export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
       }>;
     ordens: Schema.Attribute.Relation<'oneToMany', 'api::orden.orden'>;
     publishedAt: Schema.Attribute.DateTime;
+    referencias: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     telefono: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
+        };
+      }>;
+    telefonoEmergencia: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
         };
       }>;
     updatedAt: Schema.Attribute.DateTime;
@@ -660,6 +707,12 @@ export interface ApiFacturaFactura extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    archivoPDF: Schema.Attribute.Media<'files'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     archivoXML: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -712,6 +765,14 @@ export interface ApiFacturaFactura extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::factura.factura'
     >;
+    metodoPago: Schema.Attribute.Enumeration<['PUE', 'PPD']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'PUE'>;
     orden: Schema.Attribute.Relation<'oneToOne', 'api::orden.orden'>;
     publishedAt: Schema.Attribute.DateTime;
     razonSocial: Schema.Attribute.String &
@@ -830,6 +891,7 @@ export interface ApiInventarioInventario extends Struct.CollectionTypeSchema {
     >;
     NoSerie: Schema.Attribute.String &
       Schema.Attribute.Required &
+      Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -918,6 +980,13 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    descuentos: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<0>;
     diasRenta: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -934,9 +1003,9 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
       }>;
     estadoOrden: Schema.Attribute.Enumeration<
       [
-        'endiente',
+        'Pendiente',
         'Confirmada',
-        'En entrega',
+        'EnEntrega',
         'Activa',
         'Finalizada',
         'Cancelada',
@@ -957,7 +1026,7 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
         };
       }>;
     factura: Schema.Attribute.Relation<'oneToOne', 'api::factura.factura'>;
-    fechaDevolucionRea: Schema.Attribute.DateTime &
+    fechaDevolucionReal: Schema.Attribute.DateTime &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -995,6 +1064,12 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
+        };
+      }>;
+    notasInternas: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
         };
       }>;
     paymentLink: Schema.Attribute.String &

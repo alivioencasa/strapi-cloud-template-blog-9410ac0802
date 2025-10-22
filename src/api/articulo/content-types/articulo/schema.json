@@ -126,6 +126,33 @@
       "relation": "oneToMany",
       "target": "api::renta.renta",
       "mappedBy": "Orden"
+    },
+    "disponibilidad": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": true
+    },
+    "requiereInstalacion": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": false
+    },
+    "requiereCapacitacion": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": false
     }
   }
 }

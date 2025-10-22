@@ -122,6 +122,32 @@
         "videos",
         "audios"
       ]
+    },
+    "metodoPago": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "default": "PUE",
+      "enum": [
+        "PUE",
+        "PPD"
+      ]
+    },
+    "archivoPDF": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }

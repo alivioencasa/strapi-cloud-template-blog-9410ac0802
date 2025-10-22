@@ -22,7 +22,8 @@
           "localized": false
         }
       },
-      "required": true
+      "required": true,
+      "unique": true
     },
     "identificador": {
       "type": "uid",
