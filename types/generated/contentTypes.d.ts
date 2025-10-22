@@ -507,8 +507,6 @@ export interface ApiArticuloArticulo extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    renta: Schema.Attribute.Relation<'manyToOne', 'api::renta.renta'>;
-    rentas: Schema.Attribute.Relation<'oneToMany', 'api::renta.renta'>;
     requiereCapacitacion: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -904,7 +902,6 @@ export interface ApiInventarioInventario extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    orden: Schema.Attribute.Relation<'oneToOne', 'api::orden.orden'>;
     publishedAt: Schema.Attribute.DateTime;
     ultimoMantenimiento: Schema.Attribute.Date &
       Schema.Attribute.SetPluginOptions<{
@@ -1047,10 +1044,6 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    inventario: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::inventario.inventario'
-    >;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::orden.orden'>;
     metodoPago: Schema.Attribute.Enumeration<['Tarjeta']> &
@@ -1126,7 +1119,6 @@ export interface ApiRentaRenta extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    articulos: Schema.Attribute.Relation<'oneToMany', 'api::articulo.articulo'>;
     cargosDanos: Schema.Attribute.Decimal;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1146,7 +1138,6 @@ export interface ApiRentaRenta extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     observacionesDevolucion: Schema.Attribute.String;
     observacionesEntrega: Schema.Attribute.String & Schema.Attribute.Required;
-    Orden: Schema.Attribute.Relation<'manyToOne', 'api::articulo.articulo'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

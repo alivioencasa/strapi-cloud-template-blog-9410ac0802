@@ -211,12 +211,6 @@
       },
       "required": true
     },
-    "inventario": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::inventario.inventario",
-      "mappedBy": "orden"
-    },
     "factura": {
       "type": "relation",
       "relation": "oneToOne",

@@ -115,18 +115,6 @@
       },
       "required": true
     },
-    "renta": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::renta.renta",
-      "inversedBy": "articulos"
-    },
-    "rentas": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::renta.renta",
-      "mappedBy": "Orden"
-    },
     "disponibilidad": {
       "type": "boolean",
       "pluginOptions": {

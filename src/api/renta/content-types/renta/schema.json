@@ -11,18 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "articulos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::articulo.articulo",
-      "mappedBy": "renta"
-    },
-    "Orden": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::articulo.articulo",
-      "inversedBy": "rentas"
-    },
     "fechaEntrega": {
       "type": "datetime"
     },
