@@ -966,6 +966,13 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    costoRecogida: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<0>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

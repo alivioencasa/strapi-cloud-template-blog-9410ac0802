@@ -245,6 +245,15 @@
       "relation": "oneToMany",
       "target": "api::renta.renta",
       "mappedBy": "orden"
+    },
+    "costoRecogida": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": 0
     }
   }
 }
