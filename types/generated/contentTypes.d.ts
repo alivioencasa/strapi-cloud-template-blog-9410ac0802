@@ -1164,6 +1164,44 @@ export interface ApiRentaRenta extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSesionCotizacionSesionCotizacion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'sesion_cotizacions';
+  info: {
+    displayName: 'sesion-cotizacion';
+    pluralName: 'sesion-cotizacions';
+    singularName: 'sesion-cotizacion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cantidad: Schema.Attribute.Integer;
+    carrito: Schema.Attribute.JSON;
+    categoria_seleccionada: Schema.Attribute.String;
+    categorias_disponibles: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dias: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sesion-cotizacion.sesion-cotizacion'
+    > &
+      Schema.Attribute.Private;
+    paso_actual: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
+    producto_seleccionado: Schema.Attribute.JSON;
+    publishedAt: Schema.Attribute.DateTime;
+    telefono: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1682,6 +1720,7 @@ declare module '@strapi/strapi' {
       'api::inventario.inventario': ApiInventarioInventario;
       'api::orden.orden': ApiOrdenOrden;
       'api::renta.renta': ApiRentaRenta;
+      'api::sesion-cotizacion.sesion-cotizacion': ApiSesionCotizacionSesionCotizacion;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
