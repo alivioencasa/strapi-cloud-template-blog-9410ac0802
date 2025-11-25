@@ -37,6 +37,9 @@
     },
     "carrito": {
       "type": "json"
+    },
+    "productos_disponibles": {
+      "type": "json"
     }
   }
 }

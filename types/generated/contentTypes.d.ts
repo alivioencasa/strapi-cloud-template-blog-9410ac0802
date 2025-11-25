@@ -1192,6 +1192,7 @@ export interface ApiSesionCotizacionSesionCotizacion
       Schema.Attribute.Private;
     paso_actual: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
     producto_seleccionado: Schema.Attribute.JSON;
+    productos_disponibles: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
     telefono: Schema.Attribute.String &
       Schema.Attribute.Required &
