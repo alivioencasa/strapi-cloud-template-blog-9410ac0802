@@ -1183,6 +1183,7 @@ export interface ApiSesionCotizacionSesionCotizacion
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    datos_cliente: Schema.Attribute.JSON;
     dias: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

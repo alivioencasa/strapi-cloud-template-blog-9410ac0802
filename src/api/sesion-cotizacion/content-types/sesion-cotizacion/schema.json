@@ -40,6 +40,9 @@
     },
     "productos_disponibles": {
       "type": "json"
+    },
+    "datos_cliente": {
+      "type": "json"
     }
   }
 }
