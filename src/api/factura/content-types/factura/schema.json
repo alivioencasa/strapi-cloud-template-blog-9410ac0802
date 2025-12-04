@@ -22,8 +22,7 @@
           "localized": false
         }
       },
-      "required": true,
-      "regex": "ej: XAXX010101000"
+      "required": true
     },
     "razonSocial": {
       "type": "string",
@@ -32,8 +31,7 @@
           "localized": false
         }
       },
-      "required": true,
-      "regex": "Ej: Alivio en casa"
+      "required": true
     },
     "orden": {
       "type": "relation",

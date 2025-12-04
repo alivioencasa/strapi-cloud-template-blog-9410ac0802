@@ -22,8 +22,7 @@
           "localized": false
         }
       },
-      "required": true,
-      "regex": "Juan"
+      "required": true
     },
     "ApellidoPaterno": {
       "type": "string",
@@ -32,8 +31,7 @@
           "localized": false
         }
       },
-      "required": true,
-      "regex": "Perez"
+      "required": true
     },
     "apellidoMaterno": {
       "type": "string",
@@ -42,8 +40,7 @@
           "localized": false
         }
       },
-      "required": true,
-      "regex": "Rojas"
+      "required": true
     },
     "correo": {
       "type": "email",
@@ -99,8 +96,7 @@
           "localized": false
         }
       },
-      "required": false,
-      "regex": "Ej. \"Cliente recurrente\", \"Requiere factura siempre\""
+      "required": false
     },
     "direccion": {
       "type": "text",
