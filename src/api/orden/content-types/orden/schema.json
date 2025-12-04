@@ -168,8 +168,9 @@
       "enum": [
         "Pendiente",
         "Pagado",
-        "Parcial",
-        "Reembolsado"
+        "Cancelado",
+        "Reembolsado",
+        "Fallido"
       ]
     },
     "metodoPago": {
@@ -254,6 +255,14 @@
         }
       },
       "default": 0
+    },
+    "paypalOrderId": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

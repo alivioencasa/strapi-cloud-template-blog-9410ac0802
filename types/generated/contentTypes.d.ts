@@ -1028,7 +1028,7 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
         };
       }>;
     estatusPago: Schema.Attribute.Enumeration<
-      ['Pendiente', 'Pagado', 'Parcial', 'Reembolsado']
+      ['Pendiente', 'Pagado', 'Cancelado', 'Reembolsado', 'Fallido']
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1083,6 +1083,12 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
+        };
+      }>;
+    paypalOrderId: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
