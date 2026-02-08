@@ -22,7 +22,7 @@
           "localized": false
         }
       },
-      "required": true
+      "required": false
     },
     "diasRenta": {
       "type": "integer",
@@ -40,7 +40,7 @@
           "localized": false
         }
       },
-      "required": true
+      "required": false
     },
     "fechaDevolucionReal": {
       "type": "datetime",
@@ -49,7 +49,7 @@
           "localized": false
         }
       },
-      "required": true
+      "required": false
     },
     "estadoOrden": {
       "type": "enumeration",
@@ -60,12 +60,12 @@
       },
       "required": true,
       "enum": [
+        "Cotizacion",
         "Pendiente",
-        "Confirmada",
-        "EnEntrega",
-        "Activa",
-        "Finalizada",
-        "Cancelada"
+        "Por_Agendar",
+        "En_Ruta",
+        "Entregado",
+        "Recolectado"
       ]
     },
     "direccionEntrega": {
@@ -75,34 +75,7 @@
           "localized": true
         }
       },
-      "required": true
-    },
-    "ciudad": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
-    },
-    "codigoPostal": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "colonia": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
+      "required": false
     },
     "depositoGarantia": {
       "type": "decimal",
@@ -181,7 +154,10 @@
         }
       },
       "enum": [
-        "Tarjeta"
+        "Tarjeta",
+        "PayPal",
+        "Transferencia",
+        "Efectivo"
       ]
     },
     "paymentLink": {
@@ -191,7 +167,7 @@
           "localized": false
         }
       },
-      "required": true
+      "required": false
     },
     "term_accepted": {
       "type": "boolean",

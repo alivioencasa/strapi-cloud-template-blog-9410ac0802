@@ -24,47 +24,11 @@
       },
       "required": true
     },
-    "ApellidoPaterno": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
-    },
-    "apellidoMaterno": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
-    },
     "correo": {
       "type": "email",
       "pluginOptions": {
         "i18n": {
           "localized": false
-        }
-      },
-      "required": true
-    },
-    "ciudad": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
-    },
-    "colonia": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
         }
       },
       "required": true
@@ -83,7 +47,7 @@
         }
       },
       "multiple": true,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
@@ -97,32 +61,6 @@
         }
       },
       "required": false
-    },
-    "direccion": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "codigoPOstal": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "referencias": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
     },
     "telefonoEmergencia": {
       "type": "string",

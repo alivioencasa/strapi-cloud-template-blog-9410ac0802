@@ -543,41 +543,6 @@ export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    apellidoMaterno: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    ApellidoPaterno: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    ciudad: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    codigoPOstal: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    colonia: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     correo: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -588,15 +553,7 @@ export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    direccion: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     identificacionOficial: Schema.Attribute.Media<'images' | 'files', true> &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -622,12 +579,6 @@ export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
       }>;
     ordens: Schema.Attribute.Relation<'oneToMany', 'api::orden.orden'>;
     publishedAt: Schema.Attribute.DateTime;
-    referencias: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     telefono: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -937,28 +888,7 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    ciudad: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     cliente: Schema.Attribute.Relation<'manyToOne', 'api::cliente.cliente'>;
-    codigoPostal: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    colonia: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     costoEnvio: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -1005,7 +935,6 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
         };
       }>;
     direccionEntrega: Schema.Attribute.Text &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1013,12 +942,12 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
       }>;
     estadoOrden: Schema.Attribute.Enumeration<
       [
+        'Cotizacion',
         'Pendiente',
-        'Confirmada',
-        'EnEntrega',
-        'Activa',
-        'Finalizada',
-        'Cancelada',
+        'Por_Agendar',
+        'En_Ruta',
+        'Entregado',
+        'Recolectado',
       ]
     > &
       Schema.Attribute.Required &
@@ -1037,21 +966,18 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
       }>;
     factura: Schema.Attribute.Relation<'oneToOne', 'api::factura.factura'>;
     fechaDevolucionReal: Schema.Attribute.DateTime &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
     fechaFin: Schema.Attribute.DateTime &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
     fechaInicio: Schema.Attribute.DateTime &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1059,7 +985,9 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::orden.orden'>;
-    metodoPago: Schema.Attribute.Enumeration<['Tarjeta']> &
+    metodoPago: Schema.Attribute.Enumeration<
+      ['Tarjeta', 'PayPal', 'Transferencia', 'Efectivo']
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1079,7 +1007,6 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
         };
       }>;
     paymentLink: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
