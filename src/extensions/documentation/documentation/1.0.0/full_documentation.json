@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2026-02-08T09:39:55.079Z"
+    "x-generation-date": "2026-02-10T18:37:09.607Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -9573,6 +9573,7 @@
                           "paypalOrderId": {
                             "type": "string"
                           },
+                          "snapshot_carrito": {},
                           "createdAt": {
                             "type": "string",
                             "format": "date-time"
@@ -12879,6 +12880,7 @@
                 "paypalOrderId": {
                   "type": "string"
                 },
+                "snapshot_carrito": {},
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -15376,6 +15378,7 @@
                                 "paypalOrderId": {
                                   "type": "string"
                                 },
+                                "snapshot_carrito": {},
                                 "createdAt": {
                                   "type": "string",
                                   "format": "date-time"
@@ -18900,6 +18903,7 @@
               "paypalOrderId": {
                 "type": "string"
               },
+              "snapshot_carrito": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -23103,6 +23107,7 @@
                               "paypalOrderId": {
                                 "type": "string"
                               },
+                              "snapshot_carrito": {},
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -24010,6 +24015,7 @@
               "paypalOrderId": {
                 "type": "string"
               },
+              "snapshot_carrito": {},
               "locale": {
                 "type": "string"
               },
@@ -26329,6 +26335,7 @@
                   "paypalOrderId": {
                     "type": "string"
                   },
+                  "snapshot_carrito": {},
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"
@@ -26911,6 +26918,7 @@
           "paypalOrderId": {
             "type": "string"
           },
+          "snapshot_carrito": {},
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -30163,6 +30171,7 @@
               "paypalOrderId": {
                 "type": "string"
               },
+              "snapshot_carrito": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"

@@ -1027,6 +1027,12 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
         };
       }>;
     rentas: Schema.Attribute.Relation<'oneToMany', 'api::renta.renta'>;
+    snapshot_carrito: Schema.Attribute.JSON &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     subtotal: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

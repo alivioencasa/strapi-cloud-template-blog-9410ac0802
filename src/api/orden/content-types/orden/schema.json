@@ -239,6 +239,14 @@
           "localized": true
         }
       }
+    },
+    "snapshot_carrito": {
+      "type": "json",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
