@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "asesores",
+  "info": {
+    "singularName": "asesor",
+    "pluralName": "asesores",
+    "displayName": "Asesor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "telefono": {
+      "type": "string",
+      "required": true,
+      "description": "Formato E.164 sin prefijo whatsapp: — ej: +524443904063"
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "especialidad": {
+      "type": "enumeration",
+      "enum": ["ventas", "soporte", "general"],
+      "default": "general"
+    }
+  }
+}
