@@ -74,6 +74,22 @@
       "relation": "manyToOne",
       "target": "api::inventario.inventario",
       "inversedBy": "rentas"
+    },
+    "estadoRenta": {
+      "type": "enumeration",
+      "enum": [
+        "pendiente_entrega",
+        "entregada",
+        "devuelta",
+        "completada",
+        "danos_pendientes"
+      ],
+      "default": "pendiente_entrega"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cliente.cliente"
     }
   }
 }

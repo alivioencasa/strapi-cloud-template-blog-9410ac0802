@@ -88,6 +88,22 @@
       "relation": "oneToMany",
       "target": "api::renta.renta",
       "mappedBy": "inventario"
+    },
+    "proximoMantenimiento": {
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "ubicacion": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }

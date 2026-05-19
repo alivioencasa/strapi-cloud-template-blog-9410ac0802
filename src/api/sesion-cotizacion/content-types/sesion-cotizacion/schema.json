@@ -43,6 +43,14 @@
     },
     "datos_cliente": {
       "type": "json"
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": ["activa", "completada", "expirada", "cancelada"],
+      "default": "activa"
+    },
+    "expiresAt": {
+      "type": "datetime"
     }
   }
 }
